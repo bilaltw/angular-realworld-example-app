@@ -1,0 +1,12 @@
+schema: spec-driven
+
+context: |
+  Project: Conduit (RealWorld App clone)
+  Tech Stack: Angular, RxJS, Standalone Components.
+  Rule of Thumb: This is a brownfield project. Whenever adding a new feature, seamlessly integrate with the existing state management and routing patterns. Do not rewrite existing architecture unless explicitly asked.
+
+rules:
+  design:
+    - Always analyze the existing code to see how similar features are implemented before writing the design.
+  tasks:
+    - Include specific file paths for existing files that need to be modified.
