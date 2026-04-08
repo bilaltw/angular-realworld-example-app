@@ -12,6 +12,11 @@
     <div class="banner">
       <div class="container">
         <h1>{{ a.title }}</h1>
+        <p>
+          <span class="tag-default tag-pill tag-outline">
+            {{ a.body | readingTime }}
+          </span>
+        </p>
 
         <app-article-meta [article]="a">
           @if (canModify()) {

@@ -4,6 +4,7 @@ import { ArticleMetaComponent } from './article-meta.component';
 import { RouterLink } from '@angular/router';
 
 import { FavoriteButtonComponent } from './favorite-button.component';
+import { ReadingTimePipe } from '../../../shared/pipes/reading-time.pipe';
 
 @Component({
   selector: 'app-article-preview',
@@ -19,6 +20,9 @@ import { FavoriteButtonComponent } from './favorite-button.component';
         <h1>{{ article().title }}</h1>
         <p>{{ article().description }}</p>
         <span>Read more...</span>
+        <span class="tag-default tag-pill tag-outline" style="margin-left: 5px;">
+          {{ article().body | readingTime }}
+        </span>
         <ul class="tag-list">
           @for (tag of article().tagList; track tag) {
             <li class="tag-default tag-pill tag-outline">
@@ -29,7 +33,7 @@ import { FavoriteButtonComponent } from './favorite-button.component';
       </a>
     </div>
   `,
-  imports: [ArticleMetaComponent, FavoriteButtonComponent, RouterLink],
+  imports: [ArticleMetaComponent, FavoriteButtonComponent, RouterLink, ReadingTimePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ArticlePreviewComponent {

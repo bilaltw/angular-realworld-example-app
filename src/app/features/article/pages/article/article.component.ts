@@ -21,6 +21,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FavoriteButtonComponent } from '../../components/favorite-button.component';
 import { FollowButtonComponent } from '../../../profile/components/follow-button.component';
 import { DefaultImagePipe } from '../../../../shared/pipes/default-image.pipe';
+import { ReadingTimePipe } from '../../../../shared/pipes/reading-time.pipe';
 
 @Component({
   selector: 'app-article-page',
@@ -39,6 +40,7 @@ import { DefaultImagePipe } from '../../../../shared/pipes/default-image.pipe';
     ReactiveFormsModule,
     IfAuthenticatedDirective,
     DefaultImagePipe,
+    ReadingTimePipe,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
